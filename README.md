@@ -65,3 +65,46 @@ De koers wordt tussen 500 en 1000 ingesteld als er nul als waarde wordt doorgege
 ## Andere entity classes
 ### Inschrijving
 #### Members
+- Investering (Fonds, Tak21 of Tak23): Mag niet null zijn.
+- BeginKoers: minimum 10 euro.
+- Aantal: aantal aangekochte investeringen (min. 1)
+- Begunstigde: 
+  - Als er niets (null) als waarde meegegeven wordt, wordt er een lege string ingevuld.
+  - Als er een naam wordt meegegeven, moet die minstens 7 karakters lang zijn.
+### KlantenPortefeuille
+#### Members
+- Id (Guid)
+- NaamKlant
+- Cash (enkel te wijzigen van binnen de klasse)
+- Inschrijvingen: List van klasse Inschrijving
+- VoerCashBewegingUit: vermeerdert of vermindert de property cash met het meegegeven bedrag.
+  Als de cashbeweging ervoor zou zorgen dat de waarde van Cash onder de waarde van MinimumBedrag zakt, wordt er een exception gegooid. 
+  
+## Interface IInvestableBestand
+### Property
+- Effecten: List<IInvestable>
+
+### Method
+- LaadEffecten
+
+### Implementatie
+- MockDataEffecten: via LaadEffecten wordt Effecten geïnstantieerd met enkele voorbeeldobjecten) 
+
+## Interface IPortefeuilleBestand
+### Property
+- Portefeuille: KlantenPortefeuille
+
+### Method
+- LaadPortefeuille: op basis van een instance van een klasse die IInvestableBestand implementeert.
+
+### Implementatie
+- MockDataPortefeuille: via LaadPortefeuille wordt een KlantenPortefeuille geïnstantieerd, met daarin enkele Inschrijvingen. De effecten van die inschrijvingen komen van een IInvestableBestand dat als parameter is meegegeven.
+
+## BeheerEffecten
+- Aanbod: de lijst van producten (Tak21, Tak23, Fonds) waaruit gekozen kan worden bij een investering.
+- De constructor vraagt een IInvestableBestand als parameter.
+- Bevat ook een random, die gebruikt wordt over de ganse library heen.
+
+## BeheerPortefeuille
+- Portefeuille: van de klasse KlantenPortefeuille(enkel aan te maken van binnen de klasse)
+- De constructor vraagt een IPortefeuilleBestand als parameter.
