@@ -108,3 +108,17 @@ De koers wordt tussen 500 en 1000 ingesteld als er nul als waarde wordt doorgege
 ## BeheerPortefeuille
 - Portefeuille: van de klasse KlantenPortefeuille(enkel aan te maken van binnen de klasse)
 - De constructor vraagt een IPortefeuilleBestand als parameter.
+
+## GUI
+### Algemeen
+Toon de inhoud van de klantenportefeuille in de GUI (zie screenshots).
+
+### BepaalData
+Maak een methode BepaalData, die ervoor zorgt dat basis van een parameter van het type DataSources, instances worden aangemaakt van BeheerEffecten en BeheerPortefeuille.
+
+### VoerSpecifiekeTakenUit
+Methode die de acties groepeert die specifiek zijn aan het type van investering dat geselecteerd werd in de listbox.
+Bevat ook een call naar ToonGrid.
+
+### ToonGrid
+Op basis van het type van de gekozen inschrijving, worden grdFonds en grdTak21 getoond of verborgen.
