@@ -1,0 +1,51 @@
+﻿<Window x:Class="Effecten.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Effecten.Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="459.972" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <ListBox x:Name="lstInschrijvingen" HorizontalAlignment="Left" Height="326" Margin="10,8,0,0" VerticalAlignment="Top" Width="277" SelectionChanged="lstInschrijvingen_SelectionChanged"/>
+        <TextBlock x:Name="tbkKlantenInfo" HorizontalAlignment="Left" Margin="292,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="85" Width="379" Padding="5">
+            <TextBlock.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FFCEF7F4" Offset="1"/>
+                </RadialGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+        <Grid x:Name="grdInvestering" Margin="292,116,93,95">
+            <ComboBox x:Name="cmbAanbod" HorizontalAlignment="Left" Margin="126,126,0,0" VerticalAlignment="Top" Width="267" Height="77"/>
+            <Label Content="Begunstigde:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102"/>
+            <Label Content="Investering:" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Width="102"/>
+            <Label Content="Beginkoers:" HorizontalAlignment="Left" Margin="0,57,0,0" VerticalAlignment="Top" Width="102"/>
+            <Label Content="Aantal:" HorizontalAlignment="Left" Margin="0,31,0,0" VerticalAlignment="Top" Width="102"/>
+            <TextBox x:Name="txtBegunstigde" HorizontalAlignment="Left" Height="23" Margin="126,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253"/>
+            <TextBox x:Name="txtAantal" HorizontalAlignment="Left" Height="23" Margin="126,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253"/>
+            <TextBox x:Name="txtBeginKoers" HorizontalAlignment="Left" Height="23" Margin="126,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253"/>
+            <Label Content="Einddatum:" HorizontalAlignment="Left" Margin="0,94,0,0" VerticalAlignment="Top" Width="102"/>
+            <DatePicker x:Name="dtpEindDatum" HorizontalAlignment="Left" Margin="126,97,0,0" VerticalAlignment="Top" Width="163"/>
+
+        </Grid>
+        <Grid x:Name="grdFonds" Margin="293,339,239,54">
+            <Label Content="Kapitaalbescherming:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121"/>
+            <CheckBox x:Name="chkKapitaalBescherming" Content="" HorizontalAlignment="Left" Margin="126,6,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Grid x:Name="grdTak21" Margin="293,380,239,10">
+            <Label Content="Vaste opbrengst:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121"/>
+            <TextBox x:Name="txtVasteOpbrengst" HorizontalAlignment="Left" Height="23" Margin="126,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+        </Grid>
+        <TextBlock x:Name="tbkFeedback" HorizontalAlignment="Left" Margin="10,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="80" Width="277" Padding="5">
+            <TextBlock.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FFCEF7F4" Offset="1"/>
+                </RadialGradientBrush>
+            </TextBlock.Background>
+        </TextBlock>
+
+    </Grid>
+</Window>
